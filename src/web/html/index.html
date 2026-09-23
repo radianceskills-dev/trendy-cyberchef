@@ -194,6 +194,7 @@
                             <button type="button" aria-label="Clear recipe" class="btn btn-primary bmd-btn-icon" id="clr-recipe" data-toggle="tooltip" title="Clear recipe" data-help-title="Clearing a recipe" data-help="Clicking the 'Clear recipe' button will remove all operations from the Recipe. It will not clear the Input, but it will trigger a Bake if Auto-bake is turned on, which will change the value of the Output.">
                                 <i class="material-icons" aria-hidden="true">delete</i>
                             </button>
+                            <button type="button" class="btn btn-primary" id="trendy-ai-recipe-button" title="Build a reviewed recipe with AI"><i class="material-icons">auto_awesome</i> AI recipe</button>
                         </span>
                     </div>
                     <ul id="rec-list" class="list-area no-select"></ul>
@@ -905,5 +906,17 @@
             </div>
         </div>
 
+        <section id="trendy-ai-recipe-modal" class="d-none" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="trendy-ai-recipe-title">
+            <div class="trendy-ai-recipe-card">
+                <div class="trendy-ai-recipe-head"><div><h4 id="trendy-ai-recipe-title">Build a CyberChef recipe with AI</h4><p>Describe transformations only. CyberChef input, output, files, and the current recipe are never sent.</p></div><button type="button" class="btn btn-secondary" data-trendy-ai-recipe-close>Close</button></div>
+                <p><span id="trendy-ai-recipe-provider" class="trendy-ai-recipe-provider">Not configured</span></p>
+                <label for="trendy-ai-recipe-prompt">Transformation request</label>
+                <textarea id="trendy-ai-recipe-prompt" class="form-control" maxlength="4000" placeholder="Example: Decode Base64, gunzip it, beautify the JSON, extract $.token, then hash it with SHA-256"></textarea>
+                <small>Do not include passwords, API keys, or confidential data. Configure AI on the <a href="/" target="_blank" rel="noopener">Trendy Tools dashboard</a>.</small>
+                <p id="trendy-ai-recipe-status" role="status" aria-live="polite"></p>
+                <div id="trendy-ai-recipe-review" class="d-none"></div>
+                <div class="trendy-ai-recipe-actions"><button type="button" class="btn btn-secondary" data-trendy-ai-recipe-close>Cancel</button><button type="button" class="btn btn-primary d-none" id="trendy-ai-recipe-apply">Load reviewed recipe</button><button type="button" class="btn btn-primary" id="trendy-ai-recipe-generate">Create proposal</button></div>
+            </div>
+        </section>
     </body>
 </html>

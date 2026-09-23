@@ -16,3 +16,4 @@ tests/operations/index.mjs
 tests/browser/output/*
 .node-version
 chrome
+.browser-test

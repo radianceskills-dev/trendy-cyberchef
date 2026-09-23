@@ -17,6 +17,7 @@ import * as CanvasComponents from "../core/lib/CanvasComponents.mjs";
 
 // CyberChef
 import App from "./App.mjs";
+import {initTrendyAI} from "./trendy-ai/TrendyAI.mjs";
 import Categories from "../core/config/Categories.json" with { type: "json" };
 import OperationConfig from "../core/config/OperationConfig.json" with { type: "json" };
 
@@ -57,6 +58,7 @@ function main() {
 
     document.removeEventListener("DOMContentLoaded", main, false);
     window.app = new App(Categories, OperationConfig, defaultFavourites, defaultOptions);
+    document.addEventListener("apploaded", () => initTrendyAI(window.app), {once: true});
     window.app.setup();
 }
 
@@ -67,4 +69,3 @@ window.compileMessage = COMPILE_MSG;
 window.CanvasComponents = CanvasComponents;
 
 document.addEventListener("DOMContentLoaded", main, false);
-

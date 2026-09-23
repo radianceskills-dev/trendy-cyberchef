@@ -199,6 +199,7 @@
     "node": "npx grunt node",
     "repl": "node --no-warnings src/node/repl.mjs",
     "test": "npx grunt configTests && node --no-warnings --no-deprecation --openssl-legacy-provider tests/node/index.mjs && node --no-warnings --no-deprecation --openssl-legacy-provider --trace-uncaught tests/operations/index.mjs",
+    "test:trendy-ai": "node --test tests/trendy-ai/RecipeSchema.test.mjs",
     "testnodeconsumer": "npx grunt testnodeconsumer",
     "testui": "npx grunt testui",
     "testuidev": "npx nightwatch --env=dev",

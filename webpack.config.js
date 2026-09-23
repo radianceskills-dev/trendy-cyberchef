@@ -142,7 +142,7 @@ module.exports = {
         rules: [
             {
                 test: /\.m?js$/,
-                exclude: /node_modules\/(?!crypto-api|bootstrap)/,
+                exclude: /node_modules[\\/](?!crypto-api|bootstrap)/,
                 options: {
                     configFile: path.resolve(__dirname, "babel.config.js"),
                     cacheDirectory: true,
@@ -156,6 +156,13 @@ module.exports = {
                 loader: "imports-loader",
                 options: {
                     additionalCode: "var jQuery = false;"
+                }
+            },
+            {
+                test: /\.png$/,
+                type: "asset/resource",
+                generator: {
+                    filename: "assets/[hash][ext]"
                 }
             },
             {

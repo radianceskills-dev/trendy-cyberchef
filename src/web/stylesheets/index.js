@@ -15,3 +15,4 @@ import "bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css";
 
 /* CyberChef styles */
 import "./index.css";
+import "./trendy-ai.css";
